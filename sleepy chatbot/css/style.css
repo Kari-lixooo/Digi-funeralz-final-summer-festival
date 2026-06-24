@@ -1,20 +1,112 @@
-/* @font-face {
-    font-family:"Acidic.ttf" ;
-    src: url(https://www.dafont.com/acidic.font);
-} */
-
-/* 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #f0f0f0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: black;
+}
+
+body {
+  position: relative;
+  min-height: 1400px;
+  background: transparent;
+}
+
+canvas {
+  position: fixed !important;
+  inset: 0;
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+body img {
+  z-index: 2;
+}
+
+.angel {
+  position: absolute;
+}
+
+#border {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so it doesn't block clicks */
+  z-index: 10; /* sits on top of everything */
+}
+
+.angel {
+  width: 350px;
+  height: 700px;
+  top: 120px;
+  left: 10px;
+}
+.asa {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  top: 900px;
+  left: 400px;
+}
+.musical {
+  position: absolute;
+  width: 300px;
+  height: 160px;
+  top: 180px;
+  left: 16px;
+}
+.sanidade {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 50px;
+  left: 900px;
+}
+.piano {
+  position: absolute;
+  width: 450px;
+  height: 420px;
+  top: 250px;
+  left: 3dvh;
+}
+.fishz {
+  position: absolute;
+  width: 250px;
+  height: 220px;
+  top: 1150px;
+  left: 80px;
+}
+.lilies {
+  position: absolute;
+  width: 695px;
+  height: 610px;
+  top: 215px;
+  left: 490px;
+  opacity: 0.8;
+}
+.hors {
+  position: absolute;
+  width: 395px;
+  height: 310px;
+  top: 855px;
+  left: 790px;
+}
+.ponyclock {
+  position: absolute;
+  width: 395px;
+  height: 310px;
+  top: 55px;
+  left: 470px;
 }
 /* .innitial-WOrds p {
     margin: 20;
