@@ -1,0 +1,26 @@
+/* @font-face {
+    font-family:"Acidic.ttf" ;
+    src: url(https://www.dafont.com/acidic.font);
+} */
+
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+}
+/* .innitial-WOrds p {
+    margin: 20;
+
+    font-size:20px;
+    line-height: 1.35em;
+    text-align: center;
+
+} */
