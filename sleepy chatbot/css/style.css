@@ -1,25 +1,32 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-}
-
-html {
+  margin: 0;
+  min-height: 100%;
   background: black;
 }
 
+
+
 body {
-  position: relative;
-  min-height: 1400px;
-  background: transparent;
+  overflow: auto;
 }
 
+#scene {
+  position: relative;
+  width: 1265px;
+  height: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+#scene img {
+  position: absolute;
+}
 canvas {
   position: fixed !important;
   inset: 0;
@@ -29,10 +36,6 @@ canvas {
 
 body img {
   z-index: 2;
-}
-
-.angel {
-  position: absolute;
 }
 
 #border {
@@ -46,9 +49,10 @@ body img {
 }
 
 .angel {
+  position: absolute;
   width: 350px;
   height: 700px;
-  top: 120px;
+  top: 140px;
   left: 10px;
 }
 .asa {
@@ -56,13 +60,13 @@ body img {
   width: 450px;
   height: 350px;
   top: 900px;
-  left: 400px;
+  left: 200px;
 }
 .musical {
   position: absolute;
   width: 300px;
   height: 160px;
-  top: 180px;
+  top: 200px;
   left: 16px;
 }
 .sanidade {
@@ -76,8 +80,8 @@ body img {
   position: absolute;
   width: 450px;
   height: 420px;
-  top: 250px;
-  left: 3dvh;
+  top: 270px;
+  left: 20px;
 }
 .fishz {
   position: absolute;
@@ -116,3 +120,18 @@ body img {
     text-align: center;
 
 } */
+#h1 {
+  position: absolute ;
+  top: 60px;
+  left: 100px;
+  width: 410px;
+  margin: 0;
+
+  color: white;
+  font-family:arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+
+  z-index: 20;
+  pointer-events: none;
+}

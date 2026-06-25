@@ -51,6 +51,21 @@ function setup() {
 
   button.mousePressed(greet);
   nameInput.changed(greet);
+
+  function greet() {
+    const fixedMessage = document.querySelector("h1");
+
+    if (fixedMessage) {
+      fixedMessage.remove();
+    }
+
+    const name = nameInput.value();
+
+    greeting.html(`Hello, ${name}!`);
+    nameInput.value("");
+  }
+
+  nameInput.changed(greet);
 }
 
 function draw() {
@@ -63,19 +78,7 @@ function draw() {
     width / 2,
     height / 2,
     lerpColor(c1, c3, horizontalAmount),
-    lerpColor(c2, c4, verticalAmount)
-  );
-
-  fill(255);
-  textAlign(CENTER);
-  textSize(20);
-
-  text(
-    "well well well... if it isnt a sinner looking for confinment, tell me all of your secrets :p priomese im good",
-    50,
-    50,
-    480,
-    500
+    lerpColor(c2, c4, verticalAmount),
   );
 }
 
@@ -85,11 +88,7 @@ function drawGradient(x, y, innerColour, outerColour) {
   // Previously this decreased by 1.
   // Decreasing by 12 draws about 12× fewer circles.
   for (let r = radius; r > 0; r -= 12) {
-    const gradientColour = lerpColor(
-      innerColour,
-      outerColour,
-      r / radius
-    );
+    const gradientColour = lerpColor(innerColour, outerColour, r / radius);
 
     fill(gradientColour);
     circle(x, y, r);
@@ -104,14 +103,43 @@ function keyPressed() {
 }
 
 function greet() {
-  const name = nameInput.value();
+  const message = nameInput.value().trim();
 
-  greeting.html(`Hello, ${name}!`);
+  if (!message) {
+    return;
+  }
+
+  saveMessage(message);
+
+  const fixedMessage = document.querySelector("#h1");
+
+  if (fixedMessage) {
+    fixedMessage.remove();
+  }
+
+  greeting.html(`Hello, ${message}!`);
   nameInput.value("");
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   dim = Math.max(width, height) * 2;
+}
+async function saveMessage(message) {
+  try {
+    const response = await fetch("/api/save-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message })
+    });
+
+    if (!response.ok) {
+      throw new Error("Message was not saved");
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 
