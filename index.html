@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digi Funeralz: RIP Blingee</title>
 
+    <script>
+      if (
+        window.location.hash === "#funeral" ||
+        localStorage.getItem("enteredFuneral") === "true"
+      ) {
+        document.documentElement.classList.add("entered-funeral-state");
+      }
+    </script>
+
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/p5@2.2.2/lib/p5.min.js"></script>
@@ -48,9 +57,11 @@
     <!-- FUNERAL PAGE -->
     <main class="funeral-page">
       <!-- MAIN TITLE LAYERS -->
-      <img class="rainbow-title" src="imgs/rainbow_title.png" alt="" />
-
-      <img class="coffin" src="imgs/coffin.png" alt="" />
+      <div class="hero-stack">
+        <img class="rainbow-title" src="imgs/rainbow_title.png" alt="" />
+        <img class="coffin" src="imgs/coffin.png" alt="" />
+        <img class="subtitle" src="imgs/subtitle.png" alt="" />
+      </div>
 
       <!-- PEARL BORDER -->
       <div class="pearl-border pearl-border-top"></div>
@@ -80,512 +91,92 @@
         alt=""
       />
 
-      <!-- SIDE SCATTERED GIFS PACKED EDGES -->
-      <div class="side-scattered-gifs" aria-hidden="true">
-        <!-- first layer -->
-        <img
-          class="side-blingee side-blingee-1"
-          src="imgs/gifs/gif1.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-2"
-          src="imgs/gifs/gif2.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-3"
-          src="imgs/gifs/gif3.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-4"
-          src="imgs/gifs/gif4.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-5"
-          src="imgs/gifs/gif5.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-6"
-          src="imgs/gifs/gif6.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-7"
-          src="imgs/gifs/gif7.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-8"
-          src="imgs/gifs/gif8.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-9"
-          src="imgs/gifs/gif9.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-10"
-          src="imgs/gifs/gif10.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-11"
-          src="imgs/gifs/gif11.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-12"
-          src="imgs/gifs/gif12.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-13"
-          src="imgs/gifs/gif13.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-14"
-          src="imgs/gifs/gif14.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-15"
-          src="imgs/gifs/gif15.gif"
-          loading="lazy"
-          alt=""
-        />
+      <!-- LEFT SIDE GIF GROUP -->
+      <div class="gif-side gif-left" aria-hidden="true">
+        <img class="side-blingee left-gif-1" src="imgs/gif1.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-2" src="imgs/gif2.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-3" src="imgs/gif3.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-4" src="imgs/gif4.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-5" src="imgs/gif5.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-6" src="imgs/gif6.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-7" src="imgs/gif7.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-8" src="imgs/gif8.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-9" src="imgs/gif9.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-10" src="imgs/gif10.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-11" src="imgs/gif11.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-12" src="imgs/gif12.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-13" src="imgs/gif13.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-14" src="imgs/gif14.gif" loading="lazy" alt="" />
+        <img class="side-blingee left-gif-15" src="imgs/gif15.gif" loading="lazy" alt="" />
 
-        <img
-          class="side-blingee side-blingee-16"
-          src="imgs/gifs/gif16.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-17"
-          src="imgs/gifs/gif17.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-18"
-          src="imgs/gifs/gif18.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-19"
-          src="imgs/gifs/gif19.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-20"
-          src="imgs/gifs/gif20.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-21"
-          src="imgs/gifs/gif21.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-22"
-          src="imgs/gifs/gif22.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-23"
-          src="imgs/gifs/gif23.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-24"
-          src="imgs/gifs/gif24.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-25"
-          src="imgs/gifs/gif25.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-26"
-          src="imgs/gifs/gif26.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-27"
-          src="imgs/gifs/gif27.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-28"
-          src="imgs/gifs/gif28.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-29"
-          src="imgs/gifs/gif29.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-30"
-          src="imgs/gifs/gif30.gif"
-          loading="lazy"
-          alt=""
-        />
+        <img class="kari-scatter kari-butterfly2" src="imgs/butterfly2.gif" alt="" />
+        <img class="kari-scatter kari-hello" src="imgs/hello.gif" alt="" />
+        <img class="kari-scatter kari-music" src="imgs/music.gif" alt="" />
+        <img class="kari-scatter kari-rigs" src="imgs/rigs.gif" alt="" />
+        <img class="kari-scatter kari-flower2" src="imgs/flower2.gif" alt="" />
+        <img class="kari-scatter kari-flower4" src="imgs/flower4.gif" alt="" />
+        <img class="kari-scatter kari-horse" src="imgs/horse.gif" alt="" />
+        <img class="kari-scatter kari-trebble" src="imgs/trebble.gif" alt="" />
+        <img class="kari-scatter kari-pyramid" src="imgs/pyramid.gif" alt="" />
 
-        <!-- second layer, repeats the same 30 to pack the edges -->
-        <img
-          class="side-blingee side-blingee-31"
-          src="imgs/gifs/gif1.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-32"
-          src="imgs/gifs/gif2.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-33"
-          src="imgs/gifs/gif3.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-34"
-          src="imgs/gifs/gif4.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-35"
-          src="imgs/gifs/gif5.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-36"
-          src="imgs/gifs/gif6.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-37"
-          src="imgs/gifs/gif7.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-38"
-          src="imgs/gifs/gif8.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-39"
-          src="imgs/gifs/gif9.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-40"
-          src="imgs/gifs/gif10.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-41"
-          src="imgs/gifs/gif11.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-42"
-          src="imgs/gifs/gif12.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-43"
-          src="imgs/gifs/gif13.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-44"
-          src="imgs/gifs/gif14.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-45"
-          src="imgs/gifs/gif15.gif"
-          loading="lazy"
-          alt=""
-        />
-
-        <img
-          class="side-blingee side-blingee-46"
-          src="imgs/gifs/gif16.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-47"
-          src="imgs/gifs/gif17.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-48"
-          src="imgs/gifs/gif18.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-49"
-          src="imgs/gifs/gif19.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-50"
-          src="imgs/gifs/gif20.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-51"
-          src="imgs/gifs/gif21.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-52"
-          src="imgs/gifs/gif22.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-53"
-          src="imgs/gifs/gif23.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-54"
-          src="imgs/gifs/gif24.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-55"
-          src="imgs/gifs/gif25.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-56"
-          src="imgs/gifs/gif26.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-57"
-          src="imgs/gifs/gif27.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-58"
-          src="imgs/gifs/gif28.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-59"
-          src="imgs/gifs/gif29.gif"
-          loading="lazy"
-          alt=""
-        />
-        <img
-          class="side-blingee side-blingee-60"
-          src="imgs/gifs/gif30.gif"
-          loading="lazy"
-          alt=""
-        />
+        <img class="memorial-gif memorial-angel1" src="imgs/angel1.gif" alt="" />
+        <img class="memorial-gif memorial-candle2" src="imgs/candle2.gif" alt="" />
+        <img class="memorial-gif memorial-dove2" src="imgs/dove2.gif" alt="" />
+        <img class="memorial-gif memorial-flower7" src="imgs/flower7.gif" alt="" />
+        <img class="memorial-gif memorial-heart3" src="imgs/heart3.gif" alt="" />
+        <img class="memorial-gif memorial-heart5" src="imgs/heart5.gif" alt="" />
+        <img class="memorial-gif memorial-loveyou1" src="imgs/loveyou1.gif" alt="" />
+        <img class="memorial-gif memorial-missyou1" src="imgs/missyou.gif" alt="" />
+        <img class="memorial-gif memorial-missyou2" src="imgs/missyou2.gif" alt="" />
+        <img class="memorial-gif memorial-missyou4" src="imgs/missyou4.gif" alt="" />
+        <img class="memorial-gif memorial-missyou6" src="imgs/missyou6.gif" alt="" />
       </div>
 
-      <!-- MAIN SCATTERED GIFS / IMAGES -->
-      <img class="kari-scatter kari-baddie" src="imgs/baddie.gif" alt="" />
-      <img
-        class="kari-scatter kari-butterfly"
-        src="imgs/butterfly.gif"
-        alt=""
-      />
-      <img
-        class="kari-scatter kari-butterfly2"
-        src="imgs/butterfly2.gif"
-        alt=""
-      />
-      <img
-        class="kari-scatter kari-butterfly3"
-        src="imgs/butterfly3.gif"
-        alt=""
-      />
-      <img class="kari-scatter kari-candle" src="imgs/candle.gif" alt="" />
-      <img class="kari-scatter kari-casa" src="imgs/casa.png" alt="" />
-      <img class="kari-scatter kari-hello" src="imgs1/hello.gif" alt="" />
-      <img
-        class="kari-scatter kari-comeherrr"
-        src="imgs/comeherrr.gif"
-        alt=""
-      />
-      <img class="kari-scatter kari-kitty" src="imgs/kitty.png" alt="" />
-      <img class="kari-scatter kari-coins" src="imgs/coins.gif" alt="" />
+      <!-- RIGHT SIDE GIF GROUP -->
+      <div class="gif-side gif-right" aria-hidden="true">
+        <img class="side-blingee right-gif-1" src="imgs/gif16.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-2" src="imgs/gif17.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-3" src="imgs/gif18.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-4" src="imgs/gif19.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-5" src="imgs/gif20.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-6" src="imgs/gif21.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-7" src="imgs/gif22.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-8" src="imgs/gif23.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-9" src="imgs/gif24.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-10" src="imgs/gif25.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-11" src="imgs/gif26.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-12" src="imgs/gif27.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-13" src="imgs/gif28.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-14" src="imgs/gif29.gif" loading="lazy" alt="" />
+        <img class="side-blingee right-gif-15" src="imgs/gif30.gif" loading="lazy" alt="" />
 
-      <!-- EXTRA OLD GIFS BACK IN -->
-      <img class="kari-scatter kari-moneyz" src="imgs/moneyz.png" alt="" />
-      <img class="kari-scatter kari-moni" src="imgs/mojis.png" alt="" />
-      <img class="kari-scatter kari-music" src="imgs/music.gif" alt="" />
-      <img class="kari-scatter kari-music2" src="imgs/music2.gif" alt="" />
-      <img class="kari-scatter kari-rigs" src="imgs/rigs.gif" alt="" />
-      <img class="kari-scatter kari-rigs1" src="imgs/rigs1.gif" alt="rigs1" />
-      <img class="kari-scatter kari-sphynx" src="imgs/sphynx.gif" alt="" />
-      <img class="kari-scatter kari-fro" src="imgs/fro.jpg" alt="" />
-      <img class="kari-scatter kari-flower2" src="imgs/flower2.gif" alt="" />
-      <img class="kari-scatter kari-flower3" src="imgs/flower3.gif" alt="" />
-      <img class="kari-scatter kari-flower4" src="imgs/flower4.gif" alt="" />
-      <img class="kari-scatter kari-flower5" src="imgs/flower5.gif" alt="" />
-      <img class="kari-scatter kari-heart2" src="imgs/heart2.gif" alt="" />
-      <img class="kari-scatter kari-horse" src="imgs/horse.gif" alt="" />
-      <img class="kari-scatter kari-trebble" src="imgs/trebble.gif" alt="" />
-      <img class="kari-scatter kari-trebble2" src="imgs/trebble2.gif" alt="" />
-      <img class="kari-scatter kari-pyramid" src="imgs/pyramid.gif" alt="" />
-      <img class="kari-scatter kari-shreka" src="imgs/shreka.gif" alt="" />
-      <img class="kari-scatter kari-skela" src="imgs/skela.gif" alt="" />
-      <img class="kari-scatter kari-straw" src="imgs/straw.gif" alt="" />
+        <img class="kari-scatter kari-butterfly" src="imgs/butterfly.gif" alt="" />
+        <img class="kari-scatter kari-butterfly3" src="imgs/butterfly3.gif" alt="" />
+        <img class="kari-scatter kari-candle" src="imgs/candle.gif" alt="" />
+        <img class="kari-scatter kari-kitty" src="imgs/kitty.png" alt="" />
+        <img class="kari-scatter kari-music2" src="imgs/music2.gif" alt="" />
+        <img class="kari-scatter kari-rigs1" src="imgs/rigs1.gif" alt="rigs1" />
+        <img class="kari-scatter kari-flower3" src="imgs/flower3.gif" alt="" />
+        <img class="kari-scatter kari-flower5" src="imgs/flower5.gif" alt="" />
+        <img class="kari-scatter kari-heart2" src="imgs/heart2.gif" alt="" />
+        <img class="kari-scatter kari-trebble2" src="imgs/trebble2.gif" alt="" />
 
-      <!-- NEW MEMORIAL BLINGEE GIFS -->
-      <img class="memorial-gif memorial-angel1" src="imgs/angel1.gif" alt="" />
-      <img class="memorial-gif memorial-angel2" src="imgs/angel2.gif" alt="" />
-
-      <img
-        class="memorial-gif memorial-candle2"
-        src="imgs/candle2.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-candle3"
-        src="imgs/candle3.gif"
-        alt=""
-      />
-
-      <img class="memorial-gif memorial-dove2" src="imgs/dove2.gif" alt="" />
-      <img class="memorial-gif memorial-dove3" src="imgs/dove3.gif" alt="" />
-
-      <img
-        class="memorial-gif memorial-flower7"
-        src="imgs/flower7.gif"
-        alt=""
-      />
-
-      <img
-        class="memorial-gif memorial-goldheart"
-        src="imgs/goldheart.gif"
-        alt=""
-      />
-      <img class="memorial-gif memorial-heart3" src="imgs/heart3.gif" alt="" />
-      <img class="memorial-gif memorial-heart4" src="imgs/heart4.gif" alt="" />
-      <img class="memorial-gif memorial-heart5" src="imgs/heart5.gif" alt="" />
-      <img class="memorial-gif memorial-heart6" src="imgs/heart6.gif" alt="" />
-
-      <img
-        class="memorial-gif memorial-loveyou1"
-        src="imgs/loveyou1.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-loveyou2"
-        src="imgs/loveyou2.gif"
-        alt=""
-      />
-
-      <img
-        class="memorial-gif memorial-missyou1"
-        src="imgs/missyou.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou2"
-        src="imgs/missyou2.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou3"
-        src="imgs/missyou3.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou4"
-        src="imgs/missyou4.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou5"
-        src="imgs/missyou5.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou6"
-        src="imgs/missyou6.gif"
-        alt=""
-      />
-      <img
-        class="memorial-gif memorial-missyou7"
-        src="imgs/missyou7.jpg"
-        alt=""
-      />
-
-      <!-- BLUE SOFA POP-UP ADS -->
+        <img class="memorial-gif memorial-angel2" src="imgs/angel2.gif" alt="" />
+        <img class="memorial-gif memorial-candle3" src="imgs/candle3.gif" alt="" />
+        <img class="memorial-gif memorial-dove3" src="imgs/dove3.gif" alt="" />
+        <img class="memorial-gif memorial-goldheart" src="imgs/goldheart.gif" alt="" />
+        <img class="memorial-gif memorial-heart4" src="imgs/heart4.gif" alt="" />
+        <img class="memorial-gif memorial-heart6" src="imgs/heart6.gif" alt="" />
+        <img class="memorial-gif memorial-loveyou2" src="imgs/loveyou2.gif" alt="" />
+        <img class="memorial-gif memorial-missyou3" src="imgs/missyou3.gif" alt="" />
+        <img class="memorial-gif memorial-missyou5" src="imgs/missyou5.gif" alt="" />
+        <img class="memorial-gif memorial-missyou7" src="imgs/missyou7.jpg" alt="" />
+      </div>
 
       <!-- WHO WAS BLINGEE -->
       <section class="eulogy-box">
         <p>
-          Today we gather to remember celebrate and remeber the life of
+          Today we gather to remember celebrate and remember the life of
           Blingee.com (2006-2021).
         </p>
 
@@ -594,9 +185,6 @@
           allowed users to digitally decorate and personalise their images, then
           share them with friends.
         </p>
-        <div>
-          <img class="subtitle" src="imgs/subtitle.png" alt="" />
-        </div>
       </section>
 
       <!-- HOW DID YOU MAKE A BLINGEE -->
@@ -675,79 +263,57 @@
         <div class="gif-gallery">
           <figure>
             <img src="imgs/blingee/sad1.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad2.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad3.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad4.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad5.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad6.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad7.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad8.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad9.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad10.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
 
           <figure>
             <img src="imgs/blingee/sad11.gif" alt="Blingee artwork" />
-            <figcaption>
-              Credit: original Blingee user / archive link
-            </figcaption>
+            <figcaption>Credit: original Blingee user / archive link</figcaption>
           </figure>
         </div>
       </section>
@@ -782,8 +348,7 @@
         </div>
       </section>
 
-      <!-- POP UPP BOX  -->
-
+      <!-- POP UP BOX -->
       <div class="cu-popup">
         <img class="cu" src="imgs/cu.png" alt="warning" />
 
@@ -796,6 +361,7 @@
         </a>
       </div>
     </main>
+
     <script src="sketch.js"></script>
   </body>
 </html>
