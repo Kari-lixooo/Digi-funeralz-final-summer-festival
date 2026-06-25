@@ -916,16 +916,11 @@ body.entered-funeral .funeral-page {
 }
 
 .kari-rigs {
-  width: 257px;
-  height: 852.9px;
-  top: 456.8vh;
-  left: 25.2vw;
+  left: 16.8vw;
 }
+
 .kari-rigs1 {
-  width: 257px;
-  height: 852.9px;
-  top: 456.8vh;
-  left: 64.8vw;
+  left: 69.8vw;
 }
 
 .kari-flower2 {
@@ -1413,4 +1408,14 @@ body.entered-funeral .funeral-page {
   .cu-popup {
     left: 0;
   }
+}
+  #page {
+  position: relative;
+}
+.kari-rigs,
+.kari-rigs1 {
+  position: absolute;
+  top: 5327px;
+  width: 257px;
+  height: 852.9px;
 }
