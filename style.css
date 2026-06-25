@@ -1409,6 +1409,20 @@ body.entered-funeral .funeral-page {
     left: 0;
   }
 }
+
+@media (min-height: 1000px) {
+  .eulogy-box {
+    margin-top: 17.5vh;
+  }
+
+  .diagram-section {
+    margin-top: 28vh;
+  }
+
+  .gif-gallery-section,
+  .mia-section {
+    margin-top: 15.75vh;
+  }
   #page {
   position: relative;
 }
