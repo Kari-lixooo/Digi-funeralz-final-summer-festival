@@ -1419,6 +1419,9 @@ body.entered-funeral .funeral-page {
   width: 70%;
   display: block;
 }
+.cu:hover {
+  filter: brightness(1.15);
+}
 .cuok {
   position: absolute;
   left: 22%;
@@ -1436,7 +1439,7 @@ body.entered-funeral .funeral-page {
 }
 
 .cuok:hover {
-  filter: brightness(1.12);
+  filter: brightness(1.14);
 }
 
 /* da X button*/
@@ -1456,5 +1459,5 @@ body.entered-funeral .funeral-page {
 }
 
 .X:hover {
-  filter: brightness(1.12);
+  filter: brightness(1.14);
 }
