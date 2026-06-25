@@ -51,14 +51,15 @@ body.entered-funeral .landing-page {
 
 .landing-pay-respects {
   position: fixed;
-  left: 800px;
-  bottom: 5.5vh;
+
+  left: 50%;
+  bottom: 60px;
   transform: translateX(-50%);
+
   z-index: 30;
 
-  width: 50px;
-  max-width: 620px;
-  min-width: 260px;
+  width: 360px;
+  max-width: 40vw;
 
   border: none;
   outline: none;
@@ -68,7 +69,7 @@ body.entered-funeral .landing-page {
 }
 
 .landing-pay-respects img {
-  width: 140%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -130,19 +131,23 @@ body.entered-funeral > canvas {
 
 .warning-box {
   position: absolute;
-  width: min(1530px);
-  left: 30%;
-  top: 52%;
+  width: min(90vw, 1530px);
+
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .warning-img {
-  width: 140%;
+  width: 100%;
   display: block;
 }
 
 .warning-button {
   position: absolute;
+  width: 150px;
+  text-align: center;
+
   border: 2px solid #7a3c18;
   background: rgba(229, 106, 209, 0.85);
   cursor: pointer;
@@ -151,7 +156,7 @@ body.entered-funeral > canvas {
 
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-style: italic;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 1;
 
   color: #fff8d8;
@@ -167,6 +172,8 @@ body.entered-funeral > canvas {
     0 0 32px rgba(255, 214, 120, 0.8);
 
   z-index: 520;
+
+  transform: translate(-50%, -50%);
 }
 
 .warning-button:hover {
@@ -178,17 +185,17 @@ body.entered-funeral > canvas {
     0 0 22px #ff00bf,
     0 0 38px #ffcc00;
 
-  transform: scale(1.08);
-}
-
-.warning-continue {
-  left: 75%;
-  top: 58%;
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 .warning-leave {
-  left: 55%;
-  top: 58%;
+  left: calc(50% - 100px);
+  top: 60%;
+}
+
+.warning-continue {
+  left: calc(50% + 120px);
+  top: 60%;
 }
 
 /* ===================================================== */
@@ -202,10 +209,10 @@ body.entered-funeral > canvas {
   min-height: 660vh;
   overflow: hidden;
 
-  background-image: url("imgs/clouds.gif");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: repeat-y;
+  background-image: url("imgs/stars3.gif");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 
   padding-top: 67vh;
   padding-bottom: 130vh;
@@ -219,36 +226,58 @@ body.entered-funeral .funeral-page {
 /* 7. MAIN PAGE IMAGE LAYERS */
 /* ===================================================== */
 
-.rainbow-title,
-.coffin {
+.hero-stack {
   position: absolute;
-  height: auto;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(78vw, 1300px);
+  aspect-ratio: 1300 / 720;
+
+  z-index: 220;
   pointer-events: none;
 }
 
 .rainbow-title {
-  width: 110%;
-  left: -90px;
-  top: 30px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 120%;
+  height: auto;
+
+  transform: translateX(-50%);
   z-index: 220;
+  pointer-events: none;
+}
+
+.coffin {
+  position: absolute;
+  top: 170px;
+  left: 50%;
+
+  width: 62%;
+  height: auto;
+
+  transform: translateX(-50%);
+  z-index: 230;
+  pointer-events: none;
 }
 
 .subtitle {
   position: absolute;
-  top: -280px;
-  left: -38%;
-  width: 72vw;
-  transform: scale(50%);
-  z-index: 230;
-  opacity: 0.9;
-}
-
-.coffin {
-  top: 150px;
+  top: 540px;
   left: 50%;
-  width: 60vw;
+
+  width: 46%;
+  max-width: 760px;
+  height: auto;
+
   transform: translateX(-50%);
-  z-index: 210;
+  z-index: 240;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 /* ===================================================== */
@@ -337,28 +366,24 @@ body.entered-funeral .funeral-page {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
-/* top left: heart point faces inward/down-right */
 .corner-heart-top-left {
   top: 18px;
   left: 18px;
   transform: rotate(-45deg);
 }
 
-/* top right: heart point faces inward/down-left */
 .corner-heart-top-right {
   top: 18px;
   right: 18px;
   transform: rotate(45deg);
 }
 
-/* bottom left: heart point faces inward/up-right */
 .corner-heart-bottom-left {
   bottom: 18px;
   left: 18px;
   transform: rotate(-135deg);
 }
 
-/* bottom right: heart point faces inward/up-left */
 .corner-heart-bottom-right {
   bottom: 18px;
   right: 18px;
@@ -366,7 +391,16 @@ body.entered-funeral .funeral-page {
 }
 
 /* ===================================================== */
-/* 10. SIDE SCATTERED GIFS PACKED EDGES */
+/* 10. LEFT AND RIGHT GIF GROUPS */
+/* ===================================================== */
+
+/* Keeps the HTML organised without breaking your existing absolute positions */
+.gif-side {
+  display: contents;
+}
+
+/* ===================================================== */
+/* 11. SIDE SCATTERED GIFS PACKED EDGES */
 /* ===================================================== */
 
 .side-scattered-gifs {
@@ -383,7 +417,10 @@ body.entered-funeral .funeral-page {
   height: auto;
   object-fit: contain;
   pointer-events: none;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9))
+  z-index: 244;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.9))
     drop-shadow(0 0 12px rgba(255, 0, 191, 0.45));
 }
 
@@ -395,84 +432,98 @@ body.entered-funeral .funeral-page {
   width: 125px;
   transform: rotate(-8deg);
 }
+
 .side-blingee-2 {
   top: 98vh;
   left: 7vw;
   width: 95px;
   transform: rotate(10deg);
 }
+
 .side-blingee-3 {
   top: 122vh;
   left: 2.5vw;
   width: 135px;
   transform: rotate(-4deg);
 }
+
 .side-blingee-4 {
   top: 148vh;
   left: 8vw;
   width: 95px;
   transform: rotate(12deg);
 }
+
 .side-blingee-5 {
   top: 174vh;
   left: 2vw;
   width: 130px;
   transform: rotate(-12deg);
 }
+
 .side-blingee-6 {
   top: 200vh;
   left: 8.5vw;
   width: 105px;
   transform: rotate(6deg);
 }
+
 .side-blingee-7 {
   top: 226vh;
   left: 2.5vw;
   width: 130px;
   transform: rotate(-9deg);
 }
+
 .side-blingee-8 {
   top: 252vh;
   left: 8vw;
   width: 95px;
   transform: rotate(14deg);
 }
+
 .side-blingee-9 {
   top: 278vh;
   left: 2vw;
   width: 120px;
   transform: rotate(-5deg);
 }
+
 .side-blingee-10 {
   top: 304vh;
   left: 8.5vw;
   width: 90px;
   transform: rotate(8deg);
 }
+
 .side-blingee-11 {
   top: 330vh;
   left: 2.5vw;
   width: 125px;
   transform: rotate(-10deg);
 }
+
 .side-blingee-12 {
   top: 356vh;
   left: 8vw;
   width: 100px;
   transform: rotate(11deg);
 }
+
 .side-blingee-13 {
   top: 382vh;
   left: 2vw;
   width: 120px;
   transform: rotate(-6deg);
 }
+
 .side-blingee-14 {
   top: 408vh;
   left: 8.5vw;
   width: 95px;
   transform: rotate(13deg);
 }
+
 .side-blingee-15 {
   top: 434vh;
   left: 2vw;
@@ -488,84 +539,98 @@ body.entered-funeral .funeral-page {
   width: 125px;
   transform: rotate(8deg);
 }
+
 .side-blingee-17 {
   top: 110vh;
   right: 8vw;
   width: 95px;
   transform: rotate(-12deg);
 }
+
 .side-blingee-18 {
   top: 136vh;
   right: 2.5vw;
   width: 135px;
   transform: rotate(5deg);
 }
+
 .side-blingee-19 {
   top: 162vh;
   right: 8.5vw;
   width: 90px;
   transform: rotate(-9deg);
 }
+
 .side-blingee-20 {
   top: 188vh;
   right: 2vw;
   width: 120px;
   transform: rotate(11deg);
 }
+
 .side-blingee-21 {
   top: 214vh;
   right: 8vw;
   width: 105px;
   transform: rotate(-7deg);
 }
+
 .side-blingee-22 {
   top: 240vh;
   right: 2vw;
   width: 135px;
   transform: rotate(10deg);
 }
+
 .side-blingee-23 {
   top: 266vh;
   right: 8.5vw;
   width: 95px;
   transform: rotate(-13deg);
 }
+
 .side-blingee-24 {
   top: 292vh;
   right: 2.5vw;
   width: 120px;
   transform: rotate(6deg);
 }
+
 .side-blingee-25 {
   top: 318vh;
   right: 8vw;
   width: 90px;
   transform: rotate(-10deg);
 }
+
 .side-blingee-26 {
   top: 344vh;
   right: 2vw;
   width: 130px;
   transform: rotate(12deg);
 }
+
 .side-blingee-27 {
   top: 370vh;
   right: 8.5vw;
   width: 100px;
   transform: rotate(-8deg);
 }
+
 .side-blingee-28 {
   top: 396vh;
   right: 2.5vw;
   width: 120px;
   transform: rotate(9deg);
 }
+
 .side-blingee-29 {
   top: 422vh;
   right: 8vw;
   width: 95px;
   transform: rotate(-12deg);
 }
+
 .side-blingee-30 {
   top: 448vh;
   right: 2vw;
@@ -581,84 +646,98 @@ body.entered-funeral .funeral-page {
   width: 90px;
   transform: rotate(7deg);
 }
+
 .side-blingee-32 {
   top: 118vh;
   left: 15vw;
   width: 110px;
   transform: rotate(-10deg);
 }
+
 .side-blingee-33 {
   top: 146vh;
   left: 12vw;
   width: 85px;
   transform: rotate(13deg);
 }
+
 .side-blingee-34 {
   top: 176vh;
   left: 14.5vw;
   width: 115px;
   transform: rotate(-6deg);
 }
+
 .side-blingee-35 {
   top: 206vh;
   left: 13vw;
   width: 90px;
   transform: rotate(9deg);
 }
+
 .side-blingee-36 {
   top: 236vh;
   left: 15vw;
   width: 110px;
   transform: rotate(-12deg);
 }
+
 .side-blingee-37 {
   top: 266vh;
   left: 12vw;
   width: 95px;
   transform: rotate(5deg);
 }
+
 .side-blingee-38 {
   top: 296vh;
   left: 15vw;
   width: 115px;
   transform: rotate(-8deg);
 }
+
 .side-blingee-39 {
   top: 326vh;
   left: 13vw;
   width: 90px;
   transform: rotate(11deg);
 }
+
 .side-blingee-40 {
   top: 356vh;
   left: 15vw;
   width: 105px;
   transform: rotate(-7deg);
 }
+
 .side-blingee-41 {
   top: 386vh;
   left: 12.5vw;
   width: 95px;
   transform: rotate(10deg);
 }
+
 .side-blingee-42 {
   top: 416vh;
   left: 14.5vw;
   width: 115px;
   transform: rotate(-11deg);
 }
+
 .side-blingee-43 {
   top: 446vh;
   left: 13vw;
   width: 90px;
   transform: rotate(6deg);
 }
+
 .side-blingee-44 {
   top: 476vh;
   left: 15vw;
   width: 105px;
   transform: rotate(-9deg);
 }
+
 .side-blingee-45 {
   top: 506vh;
   left: 12.5vw;
@@ -674,84 +753,98 @@ body.entered-funeral .funeral-page {
   width: 95px;
   transform: rotate(-7deg);
 }
+
 .side-blingee-47 {
   top: 124vh;
   right: 15vw;
   width: 110px;
   transform: rotate(10deg);
 }
+
 .side-blingee-48 {
   top: 154vh;
   right: 12vw;
   width: 90px;
   transform: rotate(-13deg);
 }
+
 .side-blingee-49 {
   top: 184vh;
   right: 14.5vw;
   width: 115px;
   transform: rotate(6deg);
 }
+
 .side-blingee-50 {
   top: 214vh;
   right: 13vw;
   width: 95px;
   transform: rotate(-9deg);
 }
+
 .side-blingee-51 {
   top: 244vh;
   right: 15vw;
   width: 110px;
   transform: rotate(12deg);
 }
+
 .side-blingee-52 {
   top: 274vh;
   right: 12.5vw;
   width: 90px;
   transform: rotate(-5deg);
 }
+
 .side-blingee-53 {
   top: 304vh;
   right: 15vw;
   width: 115px;
   transform: rotate(8deg);
 }
+
 .side-blingee-54 {
   top: 334vh;
   right: 13vw;
   width: 95px;
   transform: rotate(-11deg);
 }
+
 .side-blingee-55 {
   top: 364vh;
   right: 15vw;
   width: 105px;
   transform: rotate(7deg);
 }
+
 .side-blingee-56 {
   top: 394vh;
   right: 12.5vw;
   width: 95px;
   transform: rotate(-10deg);
 }
+
 .side-blingee-57 {
   top: 424vh;
   right: 14.5vw;
   width: 115px;
   transform: rotate(11deg);
 }
+
 .side-blingee-58 {
   top: 454vh;
   right: 13vw;
   width: 90px;
   transform: rotate(-6deg);
 }
+
 .side-blingee-59 {
   top: 484vh;
   right: 15vw;
   width: 105px;
   transform: rotate(9deg);
 }
+
 .side-blingee-60 {
   top: 514vh;
   right: 12.5vw;
@@ -759,13 +852,8 @@ body.entered-funeral .funeral-page {
   transform: rotate(-12deg);
 }
 
-@media (max-width: 900px) {
-  .side-scattered-gifs {
-    display: none;
-  }
-}
 /* ===================================================== */
-/* 11. MAIN SCATTERED GIFS */
+/* 12. MAIN SCATTERED GIFS */
 /* ===================================================== */
 
 .kari-scatter {
@@ -773,18 +861,6 @@ body.entered-funeral .funeral-page {
   z-index: 245;
   pointer-events: none;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
-}
-
-#mind {
-  position: relative;
-  top: 10px;
-}
-
-.kari-baddie {
-  width: 120px;
-  top: 28vh;
-  left: 6vw;
-  transform: rotate(-8deg);
 }
 
 .kari-butterfly {
@@ -814,24 +890,10 @@ body.entered-funeral .funeral-page {
   right: 14vw;
 }
 
-.kari-casa {
-  width: 315px;
-  top: 5vh;
-  right: 6vw;
-  z-index: 42;
-}
-
 .kari-hello {
   width: 350px;
   top: 700px;
   left: 300px;
-}
-
-.kari-comeherrr {
-  width: 140px;
-  top: 88vh;
-  left: 72vw;
-  transform: rotate(-10deg);
 }
 
 .kari-kitty {
@@ -839,27 +901,6 @@ body.entered-funeral .funeral-page {
   top: 168vh;
   right: 14vw;
   transform: rotate(6deg);
-}
-
-.kari-coins {
-  width: 160px;
-  top: 250vh;
-  left: 10vw;
-  transform: rotate(-7deg);
-}
-
-.kari-moneyz {
-  width: 150px;
-  top: 80vh;
-  left: 12vw;
-  transform: rotate(-8deg);
-}
-
-.kari-moni {
-  width: 220px;
-  top: 120vh;
-  right: 8vw;
-  transform: rotate(7deg);
 }
 
 .kari-music {
@@ -876,28 +917,16 @@ body.entered-funeral .funeral-page {
 
 .kari-rigs {
   width: 245px;
-  height: 768.9px;
-  top: 604.4vh;
-  left: 13.4vw;
+  height: 618px;
+  top: 673.5vh;
+  left: 8vw;
 }
+
 .kari-rigs1 {
   width: 245px;
-  height: 768.9px;
-  top: 604.4vh;
-  left: 72.3vw;
-}
-
-.kari-sphynx {
-  width: 140px;
-  top: 240vh;
-  right: 10vw;
-  transform: rotate(9deg);
-}
-
-.kari-fro {
-  width: 90px;
-  top: 260vh;
-  left: 5vw;
+  height: 618px;
+  top: 673.5vh;
+  left: 73vw;
 }
 
 .kari-flower2 {
@@ -957,27 +986,8 @@ body.entered-funeral .funeral-page {
   transform: rotate(10deg);
 }
 
-.kari-shreka {
-  width: 130px;
-  top: 490vh;
-  right: 8vw;
-  transform: rotate(-8deg);
-}
-
-.kari-skela {
-  width: 110px;
-  top: 510vh;
-  right: 14vw;
-}
-
-.kari-straw {
-  width: 120px;
-  top: 530vh;
-  left: 12vw;
-}
-
 /* ===================================================== */
-/* 12. NEW MEMORIAL BLINGEE GIFS */
+/* 13. MEMORIAL GIFS */
 /* ===================================================== */
 
 .memorial-gif {
@@ -987,7 +997,6 @@ body.entered-funeral .funeral-page {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.65));
 }
 
-/* framed angel Blingees */
 .memorial-angel1 {
   width: 180px;
   top: 80vh;
@@ -1002,7 +1011,6 @@ body.entered-funeral .funeral-page {
   transform: rotate(7deg);
 }
 
-/* candles */
 .memorial-candle2 {
   width: 130px;
   top: 178vh;
@@ -1017,7 +1025,6 @@ body.entered-funeral .funeral-page {
   transform: rotate(-5deg);
 }
 
-/* doves */
 .memorial-dove2 {
   width: 180px;
   top: 250vh;
@@ -1032,7 +1039,6 @@ body.entered-funeral .funeral-page {
   transform: rotate(8deg);
 }
 
-/* flowers / hearts */
 .memorial-flower7 {
   width: 130px;
   top: 315vh;
@@ -1074,7 +1080,6 @@ body.entered-funeral .funeral-page {
   transform: rotate(7deg);
 }
 
-/* love / miss you cards */
 .memorial-loveyou1 {
   width: 170px;
   top: 485vh;
@@ -1139,54 +1144,6 @@ body.entered-funeral .funeral-page {
 }
 
 /* ===================================================== */
-/* 13. BLUE SOFA POP-UP ADS */
-/* ===================================================== */
-
-.sofa-ad {
-  position: absolute;
-  width: 180px;
-  height: 90px;
-  object-fit: cover;
-
-  border: 3px solid rgb(66, 23, 254);
-  background: white;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-
-  z-index: 270;
-  pointer-events: none;
-}
-
-.sofa-ad-1 {
-  top: 85vh;
-  left: 20vw;
-}
-
-.sofa-ad-2 {
-  top: 102vh;
-  left: 20vw;
-}
-
-.sofa-ad-3 {
-  top: 119vh;
-  left: 20vw;
-}
-
-.sofa-ad-4 {
-  top: 85vh;
-  right: 22vw;
-}
-
-.sofa-ad-5 {
-  top: 102vh;
-  right: 22vw;
-}
-
-.sofa-ad-6 {
-  top: 119vh;
-  right: 22vw;
-}
-
-/* ===================================================== */
 /* 14. PINK TEXT BOXES */
 /* ===================================================== */
 
@@ -1206,7 +1163,7 @@ body.entered-funeral .funeral-page {
 }
 
 .eulogy-box {
-  margin: 20vh auto 0 auto;
+  margin: 28vh auto 0 auto;
   width: 50vw;
   max-width: 520px;
   min-width: 420px;
@@ -1336,7 +1293,65 @@ body.entered-funeral .funeral-page {
 }
 
 /* ===================================================== */
-/* 18. RESPONSIVE */
+/* 18. POP UP AD AT THE END */
+/* ===================================================== */
+
+.cu-popup {
+  position: relative;
+  width: 1065px;
+  max-width: 90vw;
+
+  margin: 60px auto 0 auto;
+
+  left: 160px;
+}
+
+.cu {
+  width: 70%;
+  display: block;
+}
+
+.cuok {
+  position: absolute;
+  left: 22%;
+  top: 67%;
+
+  display: block;
+  width: 260px;
+  max-width: 28%;
+  cursor: pointer;
+}
+
+.cuok img {
+  width: 100%;
+  display: block;
+}
+
+.cuok:hover {
+  filter: brightness(1.12);
+}
+
+.X {
+  position: absolute;
+  left: 65.5%;
+  top: 2.5%;
+
+  display: block;
+  width: 40px;
+  cursor: pointer;
+}
+
+.X img {
+  width: 100%;
+  display: block;
+}
+
+.X:hover {
+  filter: brightness(1.12);
+}
+
+/* ===================================================== */
+/* 19. RESPONSIVE */
 /* ===================================================== */
 
 @media (max-width: 900px) {
@@ -1345,23 +1360,23 @@ body.entered-funeral .funeral-page {
     padding-bottom: 120vh;
   }
 
-  .rainbow-title {
-    width: 150vw;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30px;
+  .hero-stack {
+    width: 95vw;
+    top: 60px;
   }
 
-  .subtitle {
-    width: 130vw;
-    left: 50%;
-    transform: translateX(-50%) scale(0.5);
-    top: 350px;
+  .rainbow-title {
+    width: 135%;
   }
 
   .coffin {
-    top: 320px;
-    width: 80vw;
+    top: 150px;
+    width: 75%;
+  }
+
+  .subtitle {
+    top: 480px;
+    width: 60%;
   }
 
   .eulogy-box,
@@ -1384,16 +1399,9 @@ body.entered-funeral .funeral-page {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .kari-casa {
-    width: 220px;
-  }
-
-  .sofa-ad {
-    width: 130px;
-    height: 70px;
-  }
-
-  .side-scattered-gifs {
+  .side-blingee,
+  .kari-scatter,
+  .memorial-gif {
     display: none;
   }
 
@@ -1402,62 +1410,8 @@ body.entered-funeral .funeral-page {
     left: 50%;
     transform: translateX(-50%);
   }
-}
-/* the pop up add at the enddd
-*/
 
-.cu-popup {
-  position: relative;
-  width: 1065px;
-  max-width: 90vw;
-
-  margin: 60px auto 0 auto;
-
-  left: 160px; 
-}
-.cu {
-  width: 70%;
-  display: block;
-}
-.cu:hover {
-  filter: brightness(1.15);
-}
-.cuok {
-  position: absolute;
-  left: 22%;
-  top: 67%;
-
-  display: block;
-  width: 260px;
-  max-width: 28%;
-  cursor: pointer;
-}
-
-.cuok img {
-  width: 100%;
-  display: block;
-}
-
-.cuok:hover {
-  filter: brightness(1.14);
-}
-
-/* da X button*/
-.X {
-  position: absolute;
-  left: 65.5%;
-  top: 2.5%;
-
-  display: block;
-  width: 40px;
-  cursor: pointer;
-}
-
-.X img {
-  width: 100%;
-  display: block;
-}
-
-.X:hover {
-  filter: brightness(1.14);
+  .cu-popup {
+    left: 0;
+  }
 }
